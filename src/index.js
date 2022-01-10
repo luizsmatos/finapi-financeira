@@ -56,4 +56,20 @@ app.get('/statement', verifyCustomerExists, (req, res) => {
   return res.json(customer.statement);
 });
 
+app.post('/deposit', verifyCustomerExists, (req, res) => {
+  const { description, amount } = req.body;
+  const { customer } = req;
+
+  const statmentOperation = {
+    description,
+    amount,
+    created_at: new Date(),
+    type: 'credit',
+  }
+
+  customer.statement.push(statmentOperation);
+
+  return res.status(201).json({ message: 'Deposit successful' });
+});
+
 app.listen(3333);
