@@ -93,4 +93,19 @@ app.post('/withdraw', verifyCustomerExists, (req, res) => {
 
   return res.status(201).json({ message: 'Withdraw successful' });
 });
+
+app.get('/statement/date', verifyCustomerExists, (req, res) => {
+  const { date } = req.query;
+  const { customer } = req;
+
+  const dateFormatted = new Date(date + ' 00:00:00');
+
+  const statement = customer.statement.filter(
+    (operation) =>
+      operation.created_at.toDateString() === dateFormatted.toDateString()
+  );
+
+  return res.json(statement);
+});
+
 app.listen(3333);
