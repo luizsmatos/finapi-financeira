@@ -1,13 +1,3 @@
-### FinApi - Financeira
-
----
-
-<h1 align="center">
-    <img alt="dt-money" src="./layout.png" width="500px"/>
-</h1>
-
-<br>
-
 ## 💰 FinApi - Financeira 
 
 FinApi é uma API de Finanças, onde você consegue simular um sistema bancário em NodeJs, onde é possível executar as seguintes ações:
