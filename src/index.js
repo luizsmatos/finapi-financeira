@@ -108,4 +108,20 @@ app.get('/statement/date', verifyCustomerExists, (req, res) => {
   return res.json(statement);
 });
 
+app.put('/account', verifyCustomerExists, (req, res) => {
+  const { name } = req.body;
+  const { customer } = req;
+
+  customer.name = name;
+
+  return res.status(201).json({ message: 'Customer updated' });
+})
+
+app.get('/account', verifyCustomerExists, (req, res) => {
+  const { customer } = req;
+
+  return res.json(customer);
+})
+
+
 app.listen(3333);
