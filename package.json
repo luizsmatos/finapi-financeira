@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "luizsmatos <gusstavopdm@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
   "dependencies": {
     "express": "^4.17.2",
     "uuid": "^8.3.2"

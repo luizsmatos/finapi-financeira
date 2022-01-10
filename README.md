@@ -1,26 +1,57 @@
-### FinApi - Financeia
+### FinApi - Financeira
 
 ---
 
-## Requisitos
+<h1 align="center">
+    <img alt="dt-money" src="./layout.png" width="500px"/>
+</h1>
 
-- [x] Deve ser possível criar uma conta
-- [x] Deve ser possível buscar o extrato bancário do cliente
-- [x] Deve ser possível realizar um depósito
-- [x] Deve ser possível realizar um saque
-- [x] Deve ser possível buscar o extrato bancário do cliente por data
-- [x] Deve ser possível atualizar dados da conta do cliente
-- [x] Deve ser possível obter dados da conta do cliente
-- [x] Deve ser possível deletar uma conta
+<br>
 
+## 💰 FinApi - Financeira 
+
+FinApi é uma API de Finanças, onde você consegue simular um sistema bancário em NodeJs, onde é possível executar as seguintes ações:
+
+  - É possível criar uma conta
+  - É possível buscar o extrato bancário do cliente
+  - É possível realizar um depósito
+  - É possível realizar um saque
+  - É possível buscar o extrato bancário do cliente por data
+  - É possível atualizar dados da conta do cliente
+  - É possível obter dados da conta do cliente
+  - É possível deletar uma conta
+  - É possível retornar o saldo da conta do cliente
+
+ - Esta aplicação foi construida, durante o curso IGNITE da RocketSeat.
+
+## 🛠 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- JavaScript
+- NodeJS
+- Express
+- Nodemon
+
+## 📚 Documentação
+
+  - Em desenvolvimento!
+
+## 🚀 Como executar
+
+Clone o projeto e acesse a pasta do mesmo.
+
+```bash
+$ git clone git@github.com:luizsmatos/finapi-financeira.git
+$ cd finapi-financeira
+```
+
+Para iniciá-lo, siga os passos abaixo:
+```bash
+# Instalar as dependências
+$ yarn
+
+# Iniciar o servidor
+$ yarn dev
+```
 ---
-
-
-## Regras de negócio
-
-- [x] Não deve ser possível cadastrar uma conta com CPF já existente
-- [x] Não deve ser possível buscar extrato em uma conta não existente
-- [x] Não deve ser possível fazer depósito em uma conta não existente
-- [x] Não deve ser possível fazer saque em uma conta não existente
-- [x] Não deve ser possível fazer saque quando o saldo for insuficiente
-- [x] Não deve ser possível excluir uma conta não existente

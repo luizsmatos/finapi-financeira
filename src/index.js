@@ -131,5 +131,13 @@ app.delete('/account', verifyCustomerExists, (req, res) => {
   return res.status(200).json({ message: 'Customer deleted' });
 });
 
+app.get('/balance', verifyCustomerExists, (req, res) => {
+  const { customer } = req;
+
+  const balance = getBalance(customer.statement);
+
+  return res.json({ balance });
+})
+
 
 app.listen(3333);
