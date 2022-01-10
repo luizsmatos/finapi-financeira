@@ -123,5 +123,13 @@ app.get('/account', verifyCustomerExists, (req, res) => {
   return res.json(customer);
 })
 
+app.delete('/account', verifyCustomerExists, (req, res) => {
+  const { customer } = req;
+
+  customers.splice(customers.indexOf(customer), 1);
+
+  return res.status(200).json({ message: 'Customer deleted' });
+});
+
 
 app.listen(3333);
