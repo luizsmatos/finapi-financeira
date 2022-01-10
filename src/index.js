@@ -1,6 +1,6 @@
 const express = require('express');
 const { v4: uuidv4 } = require('uuid');
-const { customers } = require('../models/Customers');
+const { customers, getBalance } = require('../models/Customers');
 const app = express();
 
 app.use(express.json());
@@ -65,11 +65,32 @@ app.post('/deposit', verifyCustomerExists, (req, res) => {
     amount,
     created_at: new Date(),
     type: 'credit',
-  }
+  };
 
   customer.statement.push(statmentOperation);
 
   return res.status(201).json({ message: 'Deposit successful' });
 });
 
+app.post('/withdraw', verifyCustomerExists, (req, res) => {
+  const { amount } = req.body;
+  const { customer } = req;
+
+  const balance = getBalance(customer.statement);
+
+  if (balance < amount) {
+    return res.status(400).json({
+      error: 'Insufficient funds!',
+    });
+  }
+
+  const statmentOperation = {
+    amount,
+    created_at: new Date(),
+    type: 'debit',
+  };
+  customer.statement.push(statmentOperation);
+
+  return res.status(201).json({ message: 'Withdraw successful' });
+});
 app.listen(3333);
