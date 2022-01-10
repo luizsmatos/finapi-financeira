@@ -1,0 +1,7 @@
+{
+  "name": "finapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "luizsmatos <gusstavopdm@gmail.com>",
+  "license": "MIT"
+}
